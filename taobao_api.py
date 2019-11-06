@@ -62,5 +62,5 @@ def taobao_pic_recognize(pic_dir,pic_name,cookie):
                 except Exception as e:
                     print(e)
                     pass
-            
 
+    

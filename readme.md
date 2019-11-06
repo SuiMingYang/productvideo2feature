@@ -16,3 +16,9 @@ video_cut.py|剪切视频（按需调用）
 2. 在config.conf配置自己的cookie
 3. 配置视频路径，根目录
 4. python program.py
+
+行人标记：
+![示例]("https://github.com/SuiMingYang/productvideo2feature/_readme/example.png")
+
+商品接口返回：
+![示例]("https://github.com/SuiMingYang/productvideo2feature/_readme/feature.png")
