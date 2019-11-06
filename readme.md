@@ -18,7 +18,7 @@ video_cut.py|剪切视频（按需调用）
 4. python program.py
 
 行人标记：
-![示例]("https://github.com/SuiMingYang/productvideo2feature/_readme/example.png")
+![示例]("https://github.com/SuiMingYang/productvideo2feature/blob/master/_readme/example.png")
 
 商品接口返回：
-![示例]("https://github.com/SuiMingYang/productvideo2feature/_readme/feature.png")
+![示例]("https://github.com/SuiMingYang/productvideo2feature/blob/master/_readme/feature.png")
