@@ -11,13 +11,13 @@ def read_video():
     :return:
     """
     #video_path = input(r'请输入视频的路径[eg：D:\Video\66.mp4]：')
-    video_path='./测试.mp4'
-    all_info = video_path.split('\\')
+    video_path='./测试.flv'
+    all_info = video_path.split('/')
     file_name = all_info[-1].split('.')[0]
-    save_path = '\\'.join(all_info[:-1]) + '\\data' + '\\' + file_name + '.avi'
+    save_path = '/'.join(all_info[:-1]) + '/data' + '/' + file_name + '.avi'
     try:
         if not os.path.exists(save_path):
-            os.mkdir('\\'.join(all_info[:-1]) + '\\data')
+            os.mkdir('/'.join(all_info[:-1]) + '/data')
     except FileExistsError as e:
         print(u'保存路径已经创建......')
     return video_path, save_path
@@ -77,46 +77,5 @@ if __name__ == '__main__':
     clip_video()
 
 
-'''
-# 图像合成视频
-import os
-from cv2 import cv2
-import uuid
 
-
-def read_picture():
-    #path = input('请输入视频的路径[eg：D:\Image\BaiDuImgDownLoad\liuhai]: ')
-    path='image'
-    file_list = os.listdir(path)
-
-    fps = input('请输入视频的帧速率，秒为单位，一秒播放多少张照片：')  # 视频每秒2帧
-    height = input('请输入视频图片尺寸的高度，视频的高清程序')
-    weight = input('请输入视频图片尺寸的宽度，视频的高清程序')
-    size = (int(height), int(weight))  # 需要转为视频的图片的尺寸
-    return [path, fps, size, file_list]
-
-
-def write_video():
-    path, fps, size, file_list = read_picture()
-    # AVI格式编码输出 XVID
-    four_cc = cv2.VideoWriter_fourcc(*'XVID')
-    save_path = path + '\\' + '%s.avi' % str(uuid.uuid1())
-    video_writer = cv2.VideoWriter(save_path, four_cc, float(fps), size)
-    # 视频保存在当前目录下
-    for item in file_list:
-        if item.endswith('.jpg') or item.endswith('.png'):
-            # 找到路径中所有后缀名为.png的文件，可以更换为.jpg或其它
-            item = path + '\\' + item
-            img = cv2.imread(item)
-            re_pics = cv2.resize(img, size, interpolation=cv2.INTER_CUBIC)  # 定尺寸
-            if re_pics:
-                video_writer.write(re_pics)
-
-    video_writer.release()
-    cv2.destroyAllWindows()
-
-
-if __name__ == '__main__':
-    write_video()
-'''
 

@@ -13,6 +13,8 @@ def video_cut_pic(video_name,pic_url,pic_type):
     frame_number = cap.get(7)  # 视频文件的帧数
     duration = frame_number / fps  # 视频总帧数/帧速率 是时间/秒【总共有多少秒的视频时间】
     print('视频的总时间长度为 %s 秒' % str(duration))
+    print('帧速率 %s 帧/秒' % str(fps))
+    print('总帧数 %s 帧' % str(frame_number))
 
     shutil.rmtree(pic_url) #将整个文件夹删除
 
@@ -27,7 +29,7 @@ def video_cut_pic(video_name,pic_url,pic_type):
     else:
         rval = False
     
-    fps = round(fps/10,0)  #视频帧计数间隔频率
+    fps = round(fps/fps)  #视频帧计数间隔频率
     
     while rval:   #循环读取视频帧
         rval, frame = vc.read()
@@ -40,4 +42,4 @@ def video_cut_pic(video_name,pic_url,pic_type):
     return duration,fps
 
 if __name__ == "__main__":
-    video_cut_pic('./测试.mp4','./image','.jpg')
+    video_cut_pic('./【正道的光】马保国被人民日报点名批评.flv','./image','.jpg')
